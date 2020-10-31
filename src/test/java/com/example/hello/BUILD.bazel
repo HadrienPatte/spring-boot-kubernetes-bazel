@@ -5,7 +5,7 @@ java_test(
     srcs = ["HelloControllerTest.java"],
     test_class = "com.example.hello.HelloControllerTest",
     deps = [
-        "//src/main/java/com/example/hello:lib",
+        "//src/main:com.example.hello_lib",
         artifact("org.hamcrest:hamcrest-library"),
         artifact("org.springframework.boot:spring-boot-test"),
         artifact("org.springframework.boot:spring-boot-test-autoconfigure"),
@@ -20,7 +20,7 @@ java_test(
     srcs = ["HelloControllerIT.java"],
     test_class = "com.example.hello.HelloControllerIT",
     deps = [
-        "//src/main/java/com/example/hello:lib",
+        "//src/main:com.example.hello_lib",
         artifact("org.hamcrest:hamcrest-library"),
         artifact("org.springframework.boot:spring-boot"),
         artifact("org.springframework.boot:spring-boot-test"),

@@ -9,7 +9,7 @@ bazel run @unpinned_maven//:pin
 
 Build with:
 ```sh
-bazel build //src/main/java/com/example/hello
+bazel build //src/main:com.example.hello
 ```
 
 Test with:
