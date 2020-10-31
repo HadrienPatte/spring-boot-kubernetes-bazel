@@ -1,0 +1,31 @@
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+java_test(
+    name = "HelloControllerTest",
+    srcs = ["HelloControllerTest.java"],
+    test_class = "com.example.hello.HelloControllerTest",
+    deps = [
+        "//src/main/java/com/example/hello:lib",
+        artifact("org.hamcrest:hamcrest-library"),
+        artifact("org.springframework.boot:spring-boot-test"),
+        artifact("org.springframework.boot:spring-boot-test-autoconfigure"),
+        artifact("org.springframework:spring-beans"),
+        artifact("org.springframework:spring-test"),
+        artifact("org.springframework:spring-web"),
+    ],
+)
+
+java_test(
+    name = "HelloControllerIntegrationTest",
+    srcs = ["HelloControllerIT.java"],
+    test_class = "com.example.hello.HelloControllerIT",
+    deps = [
+        "//src/main/java/com/example/hello:lib",
+        artifact("org.hamcrest:hamcrest-library"),
+        artifact("org.springframework.boot:spring-boot"),
+        artifact("org.springframework.boot:spring-boot-test"),
+        artifact("org.springframework:spring-beans"),
+        artifact("org.springframework:spring-test"),
+        artifact("org.springframework:spring-web"),
+    ],
+)
