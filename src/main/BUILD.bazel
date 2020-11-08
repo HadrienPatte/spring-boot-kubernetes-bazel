@@ -12,6 +12,7 @@ java_library(
         artifact("org.springframework.boot:spring-boot"),
         artifact("org.springframework.boot:spring-boot-autoconfigure"),
         artifact("org.springframework.boot:spring-boot-starter-web"),
+        artifact("org.springframework.boot:spring-boot-starter-actuator"),
         artifact("org.springframework:spring-web"),
     ],
 )
