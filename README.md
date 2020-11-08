@@ -12,6 +12,16 @@ Build with:
 bazel build //src/main:com.example.hello
 ```
 
+Run with:
+```sh
+bazel run //src/main:com.example.hello
+```
+
+Deploy with:
+```sh
+bazel run //src/main:com.example.hello_chart.apply
+```
+
 Test with:
 ```sh
 bazel test //...

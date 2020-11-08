@@ -1,0 +1,28 @@
+load("@k8s_resource//:defaults.bzl", "k8s_resource")
+
+values = {
+    "{{ app_name }}": "hello",
+    "{{ replicaCount }}": "3",
+    "{{ container_port }}": "8080",
+    "{{ service_port }}": "8080",
+    "{{ service_type }}": "ClusterIP",
+}
+
+k8s_resource(
+    name = "deployment",
+    images = {
+        "quay.io/hadrienpatte/com.example.hello": "//src/main:com.example.hello",
+    },
+    kind = "Deployment",
+    substitutions = values,
+    template = ":deployment.yaml",
+    visibility = ["//visibility:public"],
+)
+
+k8s_resource(
+    name = "service",
+    kind = "Service",
+    substitutions = values,
+    template = ":service.yaml",
+    visibility = ["//visibility:public"],
+)

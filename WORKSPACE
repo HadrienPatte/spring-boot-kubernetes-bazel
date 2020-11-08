@@ -78,3 +78,31 @@ maven_install(
 load("@maven//:defs.bzl", "pinned_maven_install")
 
 pinned_maven_install()
+
+#############################################
+# Setup rules_k8s                           #
+# (https://github.com/bazelbuild/rules_k8s) #
+#############################################
+
+http_archive(
+    name = "io_bazel_rules_k8s",
+    sha256 = "773aa45f2421a66c8aa651b8cecb8ea51db91799a405bd7b913d77052ac7261a",
+    strip_prefix = "rules_k8s-0.5",
+    urls = ["https://github.com/bazelbuild/rules_k8s/archive/v0.5.tar.gz"],
+)
+
+load("@io_bazel_rules_k8s//k8s:k8s.bzl", "k8s_repositories")
+
+k8s_repositories()
+
+load("@io_bazel_rules_k8s//k8s:k8s_go_deps.bzl", k8s_go_deps = "deps")
+
+k8s_go_deps()
+
+load("@io_bazel_rules_k8s//k8s:k8s.bzl", "k8s_defaults")
+
+k8s_defaults(
+    name = "k8s_resource",
+    cluster = "docker-desktop",
+    context = "docker-desktop",
+)
