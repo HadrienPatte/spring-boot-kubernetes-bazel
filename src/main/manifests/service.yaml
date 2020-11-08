@@ -8,10 +8,10 @@ metadata:
 spec:
   type: {{ service_type }}
   ports:
-    - port: {{ service_port }}
+    - name: http
+      port: {{ service_port }}
       targetPort: http
       protocol: TCP
-      name: http
   selector:
     app.kubernetes.io/name: {{ app_name }}
     app.kubernetes.io/instance: {{ app_name }}

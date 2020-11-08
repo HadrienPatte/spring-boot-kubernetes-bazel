@@ -3,7 +3,8 @@ load("@k8s_resource//:defaults.bzl", "k8s_resource")
 values = {
     "{{ app_name }}": "hello",
     "{{ replicaCount }}": "3",
-    "{{ container_port }}": "8080",
+    "{{ app_port }}": "8080",
+    "{{ actuator_port }}": "8081",
     "{{ service_port }}": "8080",
     "{{ service_type }}": "ClusterIP",
 }

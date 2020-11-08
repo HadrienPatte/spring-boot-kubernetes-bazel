@@ -23,13 +23,16 @@ spec:
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
-              containerPort: {{ container_port }}
+              containerPort: {{ app_port }}
+              protocol: TCP
+            - name: actuator
+              containerPort: {{ actuator_port }}
               protocol: TCP
           livenessProbe:
             httpGet:
               path: /actuator/health/liveness
-              port: http
+              port: actuator
           readinessProbe:
             httpGet:
               path: /actuator/health/readiness
-              port: http
+              port: actuator
