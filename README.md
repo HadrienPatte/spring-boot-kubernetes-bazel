@@ -1,4 +1,4 @@
-# Sprint Boot Kubernetes Bazel
+# Spring Boot Kubernetes Bazel
 
 This repository is an example java [Spring Boot](https://spring.io/projects/spring-boot) web application built and deployed to [Kubernetes](https://kubernetes.io/) with [Bazel](https://bazel.build/)
 
